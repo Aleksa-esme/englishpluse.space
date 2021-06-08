@@ -1,0 +1,530 @@
+$site-width: 1440px;
+$min-width:375px;
+$padding_sides: 100px;
+$padding_main: 50px;
+$light_color: rgb(255, 255, 255);
+$lighter_color: #dbdbdb;
+$dark_color: black;
+$accent_color:#2D476E;
+$additional_color: #602b27;
+
+%padding-left-right {
+    padding-left: $padding_sides;
+    padding-right: $padding_sides;
+}
+
+%padding-top-bottom {
+    padding-top: $padding_main;
+    padding-bottom: $padding_main;
+}
+
+%padding {
+    @extend %padding-left-right;
+    @extend %padding-top-bottom;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none !important; 
+}
+
+ol, ul {
+    padding-left: 0px !important;
+}
+
+.main-container {
+    margin: 0 auto;
+    max-width: $site-width;
+    min-width: $min-width;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.text {
+
+    &_light {
+        color: $light_color;
+    }
+
+    &_lighter {
+        color: $lighter_color;
+    }
+
+    &_dark {
+        color: $dark_color;
+    }
+
+    &_accent {
+        color: $accent_color;
+    }
+
+    &_additional {
+        color: $additional_color;
+    }
+
+    &_center {
+        text-align: center;
+    }
+}
+
+.list-arrow {
+    padding-right: 7px;
+}
+
+.header {
+    padding-bottom: 20px;
+}
+
+.introduction {
+    background: url(img/IMG_6779.jpg) no-repeat ;
+    width: 100%;
+    height: 860px;
+    &__text {
+        padding-top: 200px;
+        @extend %padding-left-right;
+    }
+    &__list {
+        padding-top: 30px;
+        padding-left: 30px;
+        font-size: 22px;
+    }
+}
+
+.profit {
+    @extend %padding;
+    display: flex;
+    justify-content: space-between;
+    &__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        align-self: center;
+        &-block {
+            align-self: center;
+        }
+    }
+
+    &__list {
+        list-style-type:none;
+    }
+
+    & div:first-child {
+        padding-right: 30px;
+    }
+
+    &__image {
+        display: flex;
+        align-self: center;
+    }
+}
+
+.clients {
+    background-color: $accent_color;
+    @extend %padding;
+    display: flex;
+    justify-content: center;
+    &__list {
+        list-style-type:none;
+    }
+}
+
+.diagnostics {
+    @extend %padding;
+    &__button {
+        border: 2px solid $accent_color;
+        border-radius: 5px;
+        padding: 10px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    &__button:hover {
+        background-color: $accent_color;
+        color: $light_color;
+    }
+
+    &__text {
+        margin-bottom: 30px;
+        margin-top: 30px;
+        font-size: 18px;
+    }
+}
+
+.project-administration {
+    background-color: $accent_color;
+    @extend %padding;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    &__list {
+        align-self: center;
+        list-style-type:none;
+        padding-bottom: 20px;
+    }
+}
+
+.about {
+    @extend %padding;
+    display: flex;
+    justify-content: space-between;
+
+    &__image {
+        display: flex;
+        align-self: center;
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+    }
+
+    &__button {
+        border: 2px solid $accent_color;
+        border-radius: 5px;
+        padding: 10px;
+        margin-top: 20px;
+    }
+
+    &__button:hover {
+        background-color: $accent_color;
+        color: $light_color;
+    }
+
+    &__button span {
+        font-weight: bold;
+    }
+
+    &__companies {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__list {
+        list-style-type:none;
+    }
+
+    &__list:first-child {
+        padding-right: 40px;
+        margin-left: 90px;
+    }
+
+    & div:first-child {
+        padding-right: 60px;
+    }
+}
+
+.quote {
+    @extend %padding;
+    padding-top: 0px;
+    &__text {
+        display: flex;
+        justify-content: center;
+        align-self: center;
+    }
+
+    &__sign-left {
+        padding-right: 10px;
+    }
+
+    &__sign-right {
+        padding-left: 7px;
+        padding-top: 49px;
+    }
+}
+
+.slider {
+    @extend %padding-left-right;
+}
+
+.footer {
+    margin-top: 50px;
+    background-color: $accent_color;
+    @extend %padding;
+    display: flex;
+    justify-content: space-around;
+    & a {
+        padding-right: 30px;
+    }
+
+    & a:hover {
+        color: $light_color;
+    }
+    & a:last-child {
+        padding-right: 0px;
+    }
+}
+
+.icon_padding {
+    padding-right: 10px;
+}
+
+/**
+ * ----------------------------------------
+ * animation slide-in-fwd-center
+ * ----------------------------------------
+ */
+
+.slide-in-fwd-center {
+	-webkit-animation: slide-in-fwd-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-fwd-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes slide-in-fwd-center {
+    0% {
+      -webkit-transform: translateZ(-1400px);
+              transform: translateZ(-1400px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateZ(0);
+              transform: translateZ(0);
+      opacity: 1;
+    }
+}
+@keyframes slide-in-fwd-center {
+    0% {
+      -webkit-transform: translateZ(-1400px);
+              transform: translateZ(-1400px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateZ(0);
+              transform: translateZ(0);
+      opacity: 1;
+    }
+}
+
+@media (max-width: 1053px) {
+    .about {
+        &__list:first-child {
+            margin-left: 40px;
+        }
+    }
+}
+
+@media (max-width: 971px) {
+    .about {
+        flex-direction: column;
+        & div:first-child {
+            padding-right: 0px;
+        }
+        &__list:first-child {
+            margin-left: 10px;
+        }
+        &__image img {
+            margin-bottom: 20px;
+        }
+    }
+    .footer {
+        & div {
+            display: flex;
+            flex-direction: column;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        & div a:nth-child(2) i {
+            padding-right: 16px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .introduction {
+        background: url(img/IMG_6779_768.jpg) no-repeat ;
+        width: 100%;
+        height: 594px;
+        &__text {
+            width: 50%;
+            padding-top: 60px;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        &__list {
+            padding-top: 10px;
+            padding-left: 20px !important;
+        }
+    }
+    
+    .profit {
+        padding-left: 30px;
+        padding-right: 30px;
+        flex-direction: column;
+        
+        & div:first-child {
+            padding-right: 0px;
+        }
+    }
+
+    .clients {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .diagnostics {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .project-administration {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .about {
+        padding-left: 30px;
+        padding-right: 30px;
+        
+        &__image img {
+            height: 400px;
+        }
+
+        &__list:first-child {
+            margin-left: 0px;
+            padding-right: 30px;
+        }
+    }
+
+    .quote {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    
+    .slider {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    
+    .footer {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+@media (max-width: 425px) {
+    h6 {
+        font-size: 16px !important;
+    }
+
+    h5 {
+        font-size: 18px !important;
+    }
+
+    h3 {
+        font-size: 20px !important;
+    }
+
+    .header {
+        padding-bottom: 10px;
+    }
+
+    .text_size {
+        &-small {
+            font-size: 14px;
+        }
+    }
+
+    .introduction {
+        background: url(img/IMG_6779_425.jpg) no-repeat ;
+        width: 100%;
+        height: 434px;
+        &__text {
+            width: 75%;
+            padding-top: 50px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        &__list {
+            padding-top: 10px;
+            padding-left: 20px !important;
+        }
+    }
+    .profit {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        flex-direction: column;
+        
+        & div:first-child {
+            padding-right: 0px;
+        }
+    }
+
+    .clients {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .diagnostics {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .project-administration {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .about {
+        flex-direction: column;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        & div:first-child {
+            padding-right: 0px;
+        }
+        
+        &__image img {
+            height: 400px;
+            margin-bottom: 20px;
+        }
+        &__list:first-child {
+            padding-right: 20px;
+            margin-left: 0px;
+        }
+    }
+
+    .quote {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+    
+    .slider {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    
+    .footer {
+        margin: 0px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 20px;
+        padding-right: 20px;
+        & div {
+            display: flex;
+            flex-direction: column;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+    }
+}
