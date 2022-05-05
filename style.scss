@@ -1,12 +1,12 @@
 $site-width: 1440px;
-$min-width:375px;
+$min-width:325px;
 $padding_sides: 100px;
 $padding_main: 50px;
 $light_color: rgb(255, 255, 255);
 $lighter_color: #dbdbdb;
 $dark_color: black;
-$accent_color:#2D476E;
-$additional_color: #602b27;
+$accent_color:#033e6a;
+$additional_color: #dd551f;
 
 %padding-left-right {
     padding-left: $padding_sides;
@@ -29,22 +29,55 @@ $additional_color: #602b27;
 }
 
 a {
-    text-decoration: none !important; 
+    text-decoration: none !important;
 }
 
-ol, ul {
+ol,
+ul {
     padding-left: 0px !important;
+    margin-bottom: 0px !important;
+    list-style-type: none !important;
+}
+
+p {
+    margin-bottom: 0px !important;
+}
+
+.accordion {
+    &__phone {
+        display: none;
+    }
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: $accent_color;
+    width: 1.5rem !important;
 }
 
 .main-container {
     margin: 0 auto;
     max-width: $site-width;
     min-width: $min-width;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.logo {
+    @extend %padding-left-right;
+    @extend %padding-top-bottom;
+
+    &__first {
+        width: 8%;
+    }
+
+    &__second {
+        width: 20%;
+        padding-top: 60px;
+        padding-left: 10px;
+    }
 }
 
 .text {
-
     &_light {
         color: $light_color;
     }
@@ -65,204 +98,343 @@ ol, ul {
         color: $additional_color;
     }
 
+    &_insta {
+        color: $light_color;
+    }
+
+    &_insta:hover {
+        color: $additional_color;
+    }
+
     &_center {
         text-align: center;
     }
+
+    &_bold {
+        font-weight: bold;
+    }
+
+    &-size {
+        font-size: 20px;
+    }
 }
 
-.list-arrow {
-    padding-right: 7px;
-}
+.icon {
+    width: 60px;
+    padding-bottom: 15px;
 
-.header {
-    padding-bottom: 20px;
+    &_info2 {
+        width: 95px;
+    }
+
+    &_contacts {
+        padding-right: 10px;
+    }
+
+    &_flags {
+        width: 10%;
+        margin-right: 5px;
+
+        &-list {
+            width: 15%;
+            margin-right: 7px;
+        }
+
+        &-events {
+            width: 3%;
+            margin-right: 7px;
+        }
+    }
+
+    &_bonus {
+        width: 90px;
+    }
+
+    &_arrow {
+        padding-right: 7px;
+    }
+
+    &__link {
+        color: black;
+        font-size: 10px;
+        align-self: end;
+        padding-right: 20px;
+
+        & a {
+            color: black;
+        }
+    }
 }
 
 .introduction {
-    background: url(img/IMG_6779.jpg) no-repeat ;
+    background: url(img/london1440_1.jpg) no-repeat;
     width: 100%;
     height: 860px;
+
     &__text {
-        padding-top: 200px;
-        @extend %padding-left-right;
+        padding-top: 40px;
+        text-align: center;
+
+        & h1 {
+            padding-left: 370px;
+            padding-right: 370px;
+        }
+
+        & p {
+            padding-left: 370px;
+            padding-right: 370px;
+        }
     }
+
     &__list {
-        padding-top: 30px;
+        padding-top: 50px;
         padding-left: 30px;
         font-size: 22px;
+    }
+
+    &_countries {
+        padding-left: 100px;
+        padding-right: 100px;
+        padding-top: 30px;
+    }
+
+    &_countries ul {
+        display: flex;
+        flex-direction: row;
+        font-size: 18px;
     }
 }
 
 .profit {
     @extend %padding;
-    display: flex;
-    justify-content: space-between;
-    &__text {
+
+    &_heading {
+        font-size: 25px;
+        padding-bottom: 60px;
+        text-align: center;
+    }
+
+    &_blocks {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 20px;
+    }
+
+    &_block {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        padding: 15px;
         justify-content: center;
-        align-content: center;
-        align-self: center;
-        &-block {
-            align-self: center;
+        background-color: $accent_color;
+
+        &-medium {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &-low {
+            margin-top: 20px;
+        }
+
+        & h6 {
+            padding-top: 10px;
+        }
+
+        &-comp {
+            display: block;
+            display: flex;
+            justify-content: space-around;
+            padding-top: 30px;
+        }
+
+        &-phone {
+            display: none;
         }
     }
 
-    &__list {
-        list-style-type:none;
-    }
-
-    & div:first-child {
-        padding-right: 30px;
-    }
-
-    &__image {
+    &_countries {
         display: flex;
-        align-self: center;
+        justify-content: space-around;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 }
 
-.clients {
-    background-color: $accent_color;
+.flight {
     @extend %padding;
-    display: flex;
-    justify-content: center;
-    &__list {
-        list-style-type:none;
-    }
-}
 
-.diagnostics {
-    @extend %padding;
-    &__button {
-        border: 2px solid $accent_color;
-        border-radius: 5px;
-        padding: 10px;
-        margin-top: 40px;
-        margin-bottom: 40px;
-    }
-
-    &__button:hover {
-        background-color: $accent_color;
-        color: $light_color;
-    }
-
-    &__text {
-        margin-bottom: 30px;
-        margin-top: 30px;
-        font-size: 18px;
-    }
-}
-
-.project-administration {
-    background-color: $accent_color;
-    @extend %padding;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    &__list {
-        align-self: center;
-        list-style-type:none;
-        padding-bottom: 20px;
-    }
-}
-
-.about {
-    @extend %padding;
-    display: flex;
-    justify-content: space-between;
-
-    &__image {
-        display: flex;
-        align-self: center;
-    }
-
-    &__text {
+    &_blocks {
         display: flex;
         flex-direction: column;
-        align-content: center;
+    }
+
+    &_block:first-child {
+        padding-bottom: 50px;
+    }
+
+    &_block {
+        text-align: center;
+    }
+
+    &_bonus {
+        display: flex;
+        align-items: center;
         justify-content: center;
     }
+}
 
-    &__button {
-        border: 2px solid $accent_color;
-        border-radius: 5px;
-        padding: 10px;
-        margin-top: 20px;
+.info {
+    @extend %padding;
+    display: block;
+
+    &_blocks {
+        display: grid;
+        grid-template-columns: 300px auto 300px;
+        gap: 80px;
     }
 
-    &__button:hover {
-        background-color: $accent_color;
-        color: $light_color;
+    &_block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
-    &__button span {
-        font-weight: bold;
+    &_countries {
+        padding-left: 100px;
     }
+}
+
+.button {
+    border: 2px solid $accent_color;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.button:hover {
+    background-color: $accent_color;
+    color: $light_color;
+}
+
+
+.graduated {
+    @extend %padding;
+    padding: 100px;
+    display: flex;
+    background: url(img/graduated1440.jpg) no-repeat;
+    flex-direction: column;
 
     &__companies {
         display: flex;
         justify-content: center;
     }
 
+    &__block {
+        background-color: $lighter_color;
+        opacity: 0.8;
+        padding: 30px;
+
+        & h5 {
+            font-size: 25px;
+            padding-bottom: 20px;
+        }
+
+        & p {
+            padding-bottom: 20px;
+            padding-left: 200px;
+            padding-right: 200px;
+        }
+    }
+
     &__list {
-        list-style-type:none;
-    }
-
-    &__list:first-child {
-        padding-right: 40px;
-        margin-left: 90px;
-    }
-
-    & div:first-child {
-        padding-right: 60px;
+        list-style-type: none;
+        padding-bottom: 20px;
     }
 }
 
-.quote {
-    @extend %padding;
-    padding-top: 0px;
-    &__text {
+
+.events {
+    &__block {
+        background-color: $accent_color;
+        box-shadow: 0 0 5px $accent_color;
+        padding-top: 15px;
+        padding-bottom: 15px;
         display: flex;
-        justify-content: center;
-        align-self: center;
+        height: 400px;
+        align-content: center;
+        align-items: center;
     }
 
-    &__sign-left {
-        padding-right: 10px;
+    &__text {
+        padding-bottom: 10px;
     }
 
-    &__sign-right {
-        padding-left: 7px;
-        padding-top: 49px;
+    &__description {
+        display: flex;
+        flex-direction: column;
+        padding-left: 300px;
+        padding-right: 300px;
+
+        &-list {
+            list-style-type: none;
+        }
     }
 }
 
-.slider {
-    @extend %padding-left-right;
+.form {
+    padding-left: 350px;
+    padding-right: 350px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    &-control {
+        border-radius: unset !important;
+        border: unset !important;
+        border-bottom: 1px solid $accent_color !important;
+    }
+
+    &-select {
+        border-radius: unset !important;
+        border: unset !important;
+        border-bottom: 1px solid $accent_color !important;
+        color: $accent_color !important;
+    }
+
+    &__label {
+        color: $accent_color;
+    }
 }
 
 .footer {
-    margin-top: 50px;
     background-color: $accent_color;
-    @extend %padding;
+    padding-top: 20px;
+    padding-bottom: 20px;
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
-    & a {
-        padding-right: 30px;
+
+    &__contacts {
+        display: grid;
+        grid-template-columns: 200px 200px;
+        gap: 80px;
+        align-self: center;
+
+        &-block {
+            display: flex;
+            flex-direction: column;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
     }
 
     & a:hover {
         color: $light_color;
     }
-    & a:last-child {
-        padding-right: 0px;
-    }
-}
-
-.icon_padding {
-    padding-right: 10px;
 }
 
 /**
@@ -272,141 +444,354 @@ ol, ul {
  */
 
 .slide-in-fwd-center {
-	-webkit-animation: slide-in-fwd-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: slide-in-fwd-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    -webkit-animation: slide-in-fwd-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-in-fwd-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 @-webkit-keyframes slide-in-fwd-center {
     0% {
-      -webkit-transform: translateZ(-1400px);
-              transform: translateZ(-1400px);
-      opacity: 0;
+        -webkit-transform: translateZ(-1400px);
+        transform: translateZ(-1400px);
+        opacity: 0;
     }
+
     100% {
-      -webkit-transform: translateZ(0);
-              transform: translateZ(0);
-      opacity: 1;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        opacity: 1;
     }
 }
+
 @keyframes slide-in-fwd-center {
     0% {
-      -webkit-transform: translateZ(-1400px);
-              transform: translateZ(-1400px);
-      opacity: 0;
+        -webkit-transform: translateZ(-1400px);
+        transform: translateZ(-1400px);
+        opacity: 0;
     }
+
     100% {
-      -webkit-transform: translateZ(0);
-              transform: translateZ(0);
-      opacity: 1;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        opacity: 1;
     }
 }
 
-@media (max-width: 1053px) {
-    .about {
-        &__list:first-child {
-            margin-left: 40px;
+@media (max-width: 1300px) {
+    .introduction {
+        height: 760px;
+        &__text {
+            padding-left: 50px;
+            padding-right: 50px;
+            & h1 {
+                padding-left:50px;
+                padding-right: 50px;
+            }
+    
+            & p {
+                padding-left: 50px;
+                padding-right: 50px;
+            }
+        }
+        &_countries {
+            padding-left: unset;
+            padding-right: unset;
+        }
+        &_countries ul {
+            font-size: 16px;
+        }
+    }
+
+    .info {
+        &_heading {
+            font-size: 25px;
+            padding-bottom: 60px;
+        }
+
+        &_blocks {
+            grid-template-columns: 275px auto 275px;
+            gap: 50px;
+        }
+
+        &_countries {
+            padding-left: 75px;
         }
     }
 }
 
-@media (max-width: 971px) {
-    .about {
-        flex-direction: column;
-        & div:first-child {
-            padding-right: 0px;
+@media (max-width: 1150px) {
+
+    .profit,
+    .info,
+    .graduated,
+    .logo,
+    .introduction__text {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
+    .logo {
+        padding-top: 30px;
+    }
+
+    .introduction {
+        background: url(img/london1150_1.jpg) no-repeat;
+        height: 660px;
+        &__text {
+            padding-top: unset;
         }
-        &__list:first-child {
-            margin-left: 10px;
+        &_countries {
+            padding-left: unset;
+            padding-right: unset;
         }
-        &__image img {
-            margin-bottom: 20px;
+        &_countries ul {
+            font-size: 16px;
+        }
+        &_countries {
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-top: 30px;
+        }
+
+        &_countries ul {
+            font-size: 16px;
+            display: grid;
+            grid-template-columns: auto auto auto;
         }
     }
-    .footer {
-        & div {
-            display: flex;
-            flex-direction: column;
-            padding-top: 20px;
-            padding-bottom: 20px;
+
+    .profit {
+        &__text {
+            & h5 {
+                padding-left: 90px;
+                padding-right: 90px;
+            }
         }
-        & div a:nth-child(2) i {
-            padding-right: 16px;
+
+        &__university {
+            height: 90px;
         }
+    }
+
+    .events {
+        &__description {
+            padding-left: 150px;
+            padding-right: 150px;
+        }
+    }
+
+    .graduated {
+        &__block {
+            & p {
+                padding-left: 100px;
+                padding-right: 100px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+
+    .profit,
+    .info,
+    .graduated,
+    .logo,
+    .introduction__text {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .text {
+        &-size {
+            font-size: 18px;
+        }
+    }
+
+    .introduction {
+        background: url(img/london1024_1.jpg) no-repeat;
+        height: 660px;
+
+        &_countries {
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-top: 30px;
+        }
+
+        &_countries ul {
+            font-size: 16px;
+        }
+    }
+
+    .profit {
+        &_heading {
+            font-size: 22px;
+        }
+    }
+
+    .info {
+        &_heading {
+            font-size: 22px;
+            padding-bottom: 40px;
+        }
+
+        &_blocks {
+            grid-template-columns: 250px auto 250px;
+        }
+
+        &_block h5 {
+            font-size: 18px;
+        }
+    }
+
+    .graduated {
+        padding: 60px;
+        background: url(img/graduated1024.jpg) no-repeat;
+
+        &__block {
+            & h5 {
+                font-size: 22px;
+            }
+
+            & p {
+                padding-left: 80px;
+                padding-right: 80px;
+            }
+        }
+    }
+
+    .form {
+        padding-left: 150px;
+        padding-right: 150px;
+        padding-top: 40px;
+        padding-bottom: 40px;
     }
 }
 
 @media (max-width: 768px) {
     .introduction {
-        background: url(img/IMG_6779_768.jpg) no-repeat ;
-        width: 100%;
+        background: url(img/london768.jpg) no-repeat;
         height: 594px;
+
         &__text {
-            width: 50%;
-            padding-top: 60px;
-            padding-left: 30px;
-            padding-right: 30px;
+            padding-top: unset;
+
+            & h1 {
+                padding-left: unset;
+                padding-right: unset;
+            }
+
+            & p {
+                padding-left: unset;
+                padding-right: unset;
+            }
         }
+
         &__list {
-            padding-top: 10px;
-            padding-left: 20px !important;
+            font-size: 20px;
+            padding-top: 20px;
         }
-    }
-    
-    .profit {
-        padding-left: 30px;
-        padding-right: 30px;
-        flex-direction: column;
-        
-        & div:first-child {
-            padding-right: 0px;
+
+        &_countries {
+            padding-left: unset;
+            padding-right: unset;
+            padding-top: 30px;
         }
     }
 
-    .clients {
-        padding-left: 30px;
-        padding-right: 30px;
+    .flight {
+        display: none;
     }
 
-    .diagnostics {
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-
-    .project-administration {
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-
-    .about {
-        padding-left: 30px;
-        padding-right: 30px;
-        
-        &__image img {
-            height: 400px;
-        }
-
-        &__list:first-child {
-            margin-left: 0px;
-            padding-right: 30px;
-        }
-    }
-
-    .quote {
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-    
-    .slider {
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-    
-    .footer {
+    .accordion {
         padding-top: 20px;
         padding-bottom: 20px;
-        padding-left: 30px;
-        padding-right: 30px;
+        padding-top: unset;
+        padding-bottom: unset;
+        &__phone {
+            display: block;
+        }
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-left: 40px !important;
+            padding-right: 40px !important;
+            padding-top: 30px !important;
+            padding-bottom: 30px !important;
+        }
+
+        &__countries {
+            display: grid;
+            grid-template-columns: 150px 150px;
+            padding-left: 50px;
+        }
     }
+
+    .profit {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        &_heading {
+            padding-bottom: 20px;
+        }
+
+        &_blocks {
+            grid-template-columns: unset;
+            grid-template-rows: auto auto auto auto;
+        }
+
+        &_block {
+            &-low {
+                margin-top: 20px;
+            }
+        }
+    }
+
+    .info {
+        display: none;
+    }
+
+    .events {
+        &__description {
+            padding-left: 80px;
+            padding-right: 80px;
+        }
+
+        &__block {
+            height: 500px;
+        }
+    }
+
+    .graduated {
+        background: url(img/graduated768.jpg) no-repeat;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        &__block {
+            & p {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+        }
+    }
+    .form {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .footer {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        &__contacts {
+            grid-template-columns: 170px 150px;
+            gap: unset;
+            font-size: 12px;
+        }
+    }
+
 }
 
 @media (max-width: 425px) {
@@ -422,8 +807,26 @@ ol, ul {
         font-size: 20px !important;
     }
 
-    .header {
-        padding-bottom: 10px;
+    .text {
+        &-size {
+            font-size: unset;
+        }
+    }
+
+    .logo {
+        padding-left: 40px;
+        padding-right: 20px;
+        padding-top: 15px;
+
+        &__first {
+            width: 15%;
+        }
+
+        &__second {
+            width: 40%;
+            padding-top: 40px;
+            padding-left: 10px;
+        }
     }
 
     .text_size {
@@ -432,99 +835,124 @@ ol, ul {
         }
     }
 
-    .introduction {
-        background: url(img/IMG_6779_425.jpg) no-repeat ;
-        width: 100%;
-        height: 434px;
-        &__text {
-            width: 75%;
-            padding-top: 50px;
-            padding-left: 20px;
-            padding-right: 20px;
+    .icon {
+        &_arrow {
+            width: unset;
+            padding-right: 6px;
         }
-        &__list {
-            padding-top: 10px;
-            padding-left: 20px !important;
+
+        &_flags {
+            width: 18px;
+            margin-right: 5px;
+        }
+
+        &_flags-list {
+            width: 12%;
+            margin-right: 5px;
+        }
+
+        &_flags-events {
+            width: 10%;
         }
     }
+
+    .introduction {
+        background: url(img/london.jpg) no-repeat;
+        height: 600px;
+
+        &__text {
+            padding-top: unset;
+            padding-left: 20px;
+            padding-right: 20px;
+
+            & h1 {
+
+                padding-left: unset;
+                padding-right: unset;
+            }
+
+            & p {
+                padding-left: unset;
+                padding-right: unset;
+            }
+        }
+
+        &__list {
+            font-size: 18px;
+            padding-top: 20px;
+        }
+
+        &_countries ul {
+            font-size: 16px;
+            display: grid;
+            grid-template-columns: auto  auto;
+        }
+
+    }
+
     .profit {
         padding-left: 20px;
         padding-right: 20px;
-        padding-top: 30px;
-        padding-bottom: 30px;
-        flex-direction: column;
-        
-        & div:first-child {
-            padding-right: 0px;
+    }
+
+    .accordion {
+        &__content {
+            padding-left: 30px !important;
+            padding-right: 30px !important;
+            padding-top: 30px !important;
+            padding-bottom: 30px !important;
         }
     }
 
-    .clients {
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-top: 30px;
-        padding-bottom: 30px;
-    }
 
-    .diagnostics {
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
+    .graduated {
+        background: url(img/graduated.jpg) no-repeat;
 
-    .project-administration {
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-top: 30px;
-        padding-bottom: 30px;
-    }
-
-    .about {
-        flex-direction: column;
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-top: 30px;
-        padding-bottom: 30px;
-        & div:first-child {
-            padding-right: 0px;
+        &__block {
+            padding: 20px;
+            & p {
+                padding-left: unset;
+                padding-right: unset;
+                padding-bottom: unset;
+            }
         }
-        
-        &__image img {
-            height: 400px;
-            margin-bottom: 20px;
-        }
-        &__list:first-child {
-            padding-right: 20px;
-            margin-left: 0px;
+
+        &__list {
+            padding-bottom: 10px;
         }
     }
 
-    .quote {
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-top: 0px;
-        padding-bottom: 0px;
+    .events {
+        &__description {
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+
+        &__block {
+            height: 600px;
+        }
     }
-    
-    .slider {
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-top: 30px;
-        padding-bottom: 30px;
-    }
-    
+
     .footer {
-        margin: 0px;
-        padding-top: 5px;
-        padding-bottom: 5px;
+        &__contacts {
+            display: block;
+            grid-template-columns: unset;
+            gap: unset;
+            &-block:first-child {
+                padding-bottom: unset;
+            }
+        }
+        
+    }
+}
+
+@media (max-width: 325px) {
+    .profit,
+    .info,
+    .graduated,
+    .logo,
+    .introduction__text {
         padding-left: 20px;
         padding-right: 20px;
-        & div {
-            display: flex;
-            flex-direction: column;
-            padding-top: 20px;
-            padding-bottom: 20px;
-        }
     }
 }
